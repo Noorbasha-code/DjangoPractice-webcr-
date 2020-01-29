@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body bgcolor="orange">
+{% csrf_token %}
+<h2> Update YOUR DETAILS </h2><br>
+<form method="POST" class="post-form" action="{% url 'update' data.id %}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">First_name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="first_name" id="id_first_name" required maxlength="20" value="{{ data.first_name}}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Last_name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="last_name" id="id_last_name" required maxlength="100" value="{{ data.last_name }}" />
+    </div>
+  </div>
+
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Info</title>
+</head>
+<body bgcolor="#ff4500">
+<table border="1">
+<tr><th>First_Name</th>
+<th>Last_Name</th>
+<th colspan="2">Action</th></tr>
+{% for re in data %}
+    <tr><td>{{ re.first_name }}</td>
+    <td>{{ re.last_name }}</td>
+    <td><button><a href={% url 'delete' re.id %}>Delete</a></button></td>
+    <td><a href={% url 'update' re.id %}><span class="glyphicon glyphicon-pencil" >update</span></a></td>  </tr>
+{% endfor %}
+</table>
+</body>
+</html>
